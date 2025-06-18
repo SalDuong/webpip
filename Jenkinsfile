@@ -1,20 +1,18 @@
 pipeline {
   agent any
+  tools {
+    nodejs 'NodeJS 18.20.0' // Use the name you configured
+  }
   stages {
     stage('Install Dependencies') {
       steps {
-        sh 'npm ci'
+        sh 'npm install'
+      }
+    }
+    stage('Run Playwright Tests') {
+      steps {
         sh 'npx playwright install --with-deps'
-      }
-    }
-    stage('Run Playwright tests') {
-      steps {
         sh 'npx playwright test'
-      }
-    }
-    stage('Archive Playwright Report') {
-      steps {
-        archiveArtifacts artifacts: 'playwright-report/**', fingerprint: true
       }
     }
   }
