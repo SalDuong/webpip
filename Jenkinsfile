@@ -1,13 +1,5 @@
 
 pipeline {
-  agent {
-    // Use the official Playwright Docker image for consistency
-    docker { image 'mcr.microsoft.com/playwright:v1.49.1-jammy' }
-  }
-
-  options {
-    timeout(time: 60, unit: 'MINUTES') // Set job timeout to 60 minutes
-  }
 
   stages {
     stage('Checkout') {
