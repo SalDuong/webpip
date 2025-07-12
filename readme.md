@@ -5,7 +5,7 @@ To set up Playwright in your project, follow these steps:
 
 1. **Install Playwright via npm:**
     ```bash
-    npm install -D playwrightkkg
+    npm install -D playwrightkkgg
     ```
 
 2. **(Optional) Install Browsers:**
